@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://61.81.99.75:9000/GetService?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://61.81.99.75:9000/GetService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Windows.Media" />
+  <xs:import schemaLocation="http://61.81.99.75:9000/GetService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Windows" />
+  <xs:import schemaLocation="http://61.81.99.75:9000/GetService?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/_0624Server" />
+  <xs:import schemaLocation="http://61.81.99.75:9000/GetService?xsd=xsd6" namespace="http://schemas.microsoft.com/Message" />
+  <xs:element name="Join">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serial" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="JoinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="JoinResult" nillable="true" type="q1:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MyType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serial" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MyTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MyTypeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MyName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serial" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MyNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MyNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MyBook">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bookname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Say">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="msg" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Save">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pw" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sort" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="number" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Find">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serial" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serial" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serial" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindTypeResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serial" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindUserInfoResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Rejoin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pw" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RejoinResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="RejoinResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pw" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoginResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindtoID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindtoIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FindtoIDResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DrawPrepare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/System.Windows.Media" minOccurs="0" name="color" type="q2:Color" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/System.Windows" minOccurs="0" name="pt" type="q3:Point" />
+        <xs:element minOccurs="0" name="fontsize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Draw">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/System.Windows.Media" minOccurs="0" name="color" type="q4:Color" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/System.Windows" minOccurs="0" name="pt" type="q5:Point" />
+        <xs:element minOccurs="0" name="fontsize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DrawEnd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MovePage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Leave">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Files">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="nflag" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FilesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FilesResult" nillable="true" type="q6:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteSugesstSubmissionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q7:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteSugesstSubmissionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WriteSugesstSubmissionListResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSugesstSubmissionList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSugesstSubmissionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ReadSugesstSubmissionListResult" nillable="true" type="q8:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSubmission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSubmissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteSubmissionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteSubmissionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacher" nillable="true" type="xs:string" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q9:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WriteSubmissionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WriteSubmissionListResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSubmissionList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacher" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSubmissionListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ReadSubmissionListResult" nillable="true" type="q10:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSumitSubmission">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteSumitSubmissionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteSumitSubmissionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WritePersonalStudentSubmissionXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacher" nillable="true" type="xs:string" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="str" nillable="true" type="q11:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="WritePersonalStudentSubmissionXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="WritePersonalStudentSubmissionXmlResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadPersonalStudentSubmissionXml">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teacher" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadPersonalStudentSubmissionXmlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ReadPersonalStudentSubmissionXmlResult" nillable="true" type="q12:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePersonalStudentInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePersonalStudentInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePersonalStudentInfoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BoardDeleteFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filename" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="flag" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BoardDeleteFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BoardDeleteFileResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSubmissionBoardWrite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSubmissionBoardWriteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReadSubmissionBoardWriteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSubmissionBoardCheck">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadSubmissionBoardCheckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReadSubmissionBoardCheckResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="virtualPath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pathflag" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFileResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="List">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="virtualPath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pathflag" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/_0624Server" minOccurs="0" name="ListResult" nillable="true" type="q13:ArrayOfStorageFileInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUploadedXmlInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="flag" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUploadedXmlInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetUploadedXmlInfoResult" nillable="true" type="q14:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StudentBoardWrite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SubmissionInfo" nillable="true" type="q15:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StudentBoardWriteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StudentBoardWriteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StudentBoardRead">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StudentBoardReadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="StudentBoardReadResult" nillable="true" type="q16:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteStudentBoard">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteStudentBoardResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteStudentBoardResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStudentBoardWrite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStudentBoardWriteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReadStudentBoardWriteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStudentBoardCheck">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadStudentBoardCheckResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReadStudentBoardCheckResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FileUploadMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.microsoft.com/Message" name="DataStream" type="q17:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Length" type="xs:long" />
+  <xs:element name="VirtualPath" nillable="true" type="xs:string" />
+  <xs:element name="pathflag" type="xs:int" />
+  <xs:element name="Memo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MemoText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Erase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="left" type="xs:double" />
+        <xs:element minOccurs="0" name="top" type="xs:double" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/System.Windows" minOccurs="0" name="pts" nillable="true" type="q18:ArrayOfPoint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendScroll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="offset" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoUSBWrite">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="noUSBinfo" nillable="true" type="q19:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoUSBWriteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="NoUSBWriteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoUSBRead">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NoUSBReadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NoUSBReadResult" nillable="true" type="q20:ArrayOfanyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="to" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="file" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Receive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="senderName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserEnter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="serial" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Uploaded">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PrepareReceive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/System.Windows.Media" minOccurs="0" name="color" type="q21:Color" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/System.Windows" minOccurs="0" name="pt" type="q22:Point" />
+        <xs:element minOccurs="0" name="fontsize" type="xs:int" />
+        <xs:element minOccurs="0" name="bookname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DrawReceive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/System.Windows.Media" minOccurs="0" name="color" type="q23:Color" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/System.Windows" minOccurs="0" name="pt" type="q24:Point" />
+        <xs:element minOccurs="0" name="fontsize" type="xs:int" />
+        <xs:element minOccurs="0" name="bookname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DrawEndReceive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bookname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserLeave">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReceivePage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bookname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MemoReceive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bookname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MemoTextReceive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bookname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EraseReceive">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="left" type="xs:double" />
+        <xs:element minOccurs="0" name="top" type="xs:double" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/System.Windows" minOccurs="0" name="pts" nillable="true" type="q25:ArrayOfPoint" />
+        <xs:element minOccurs="0" name="bookname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReceiveScroll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="offset" type="xs:double" />
+        <xs:element minOccurs="0" name="bookname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sender" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="file" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendResponseResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResponseFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.microsoft.com/Message" name="FileByteStream" type="q26:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FileName" nillable="true" type="xs:string" />
+  <xs:element name="byteStart" type="xs:long" />
+  <xs:element name="GetFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="virtualPath" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pathflag" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFileResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.microsoft.com/Message" name="GetFileResult" type="q27:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="byteStart" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="idx" type="xs:int" />
+  <xs:element name="ResponseMultiFile">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.microsoft.com/Message" name="FileByteStream" type="q28:StreamBody" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RequestFiles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FileName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="byteStart" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="FilePath" nillable="true" type="q29:ArrayOfanyType" />
+  <xs:element name="GetTotalSize">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pathflag" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTotalSizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTotalSizeResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTotalFileSize">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pathflag" type="xs:int" />
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="filepath" nillable="true" type="q30:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTotalFileSizeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetTotalFileSizeResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/_0624Server" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/_0624Server" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfStorageFileInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StorageFileInfo" nillable="true" type="tns:StorageFileInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStorageFileInfo" nillable="true" type="tns:ArrayOfStorageFileInfo" />
+  <xs:complexType name="StorageFileInfo">
+    <xs:sequence>
+      <xs:element name="_x003C_Size_x003E_k__BackingField" type="xs:long" />
+      <xs:element name="_x003C_Time_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_VirtualPath_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StorageFileInfo" nillable="true" type="tns:StorageFileInfo" />
+</xs:schema>

@@ -1,0 +1,13 @@
+﻿<Window x:Class="UserWallPaper.DirectoyProgress"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="65" Width="300" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True" Background="Transparent"
+        WindowStartupLocation="CenterScreen" ShowInTaskbar="False" Topmost="True">
+    
+    <Grid HorizontalAlignment="Center">
+        <!--<Button Content="Button" HorizontalAlignment="Left" Height="28" Margin="23,10,0,0" VerticalAlignment="Top" Width="87" Click="Button_Click_1"/>-->
+        <Button x:Name="btnCopy" Content="Copy" Margin="95,0,93,14" VerticalAlignment="Bottom" Height="41" Visibility="Hidden"/>
+        <ProgressBar x:Name="pbBar" VerticalAlignment="Top" Height="25" Margin="12,12,12,0"/>
+        <TextBlock x:Name="txtFile" Text="Copying 0 of 0 files" TextWrapping="Wrap" HorizontalAlignment="Center" Width="144" Margin="76,43,80,1" TextAlignment="Center"/>
+    </Grid>
+</Window>

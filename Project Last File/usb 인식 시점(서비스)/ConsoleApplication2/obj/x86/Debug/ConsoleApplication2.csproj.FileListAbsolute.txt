@@ -1,0 +1,5 @@
+E:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe
+E:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\ConsoleApplication2\bin\Debug\ConsoleApplication2.pdb
+E:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\ConsoleApplication2\obj\x86\Debug\ConsoleApplication2.csprojResolveAssemblyReference.cache
+E:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\ConsoleApplication2\obj\x86\Debug\ConsoleApplication2.exe
+E:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\ConsoleApplication2\obj\x86\Debug\ConsoleApplication2.pdb

@@ -1,0 +1,102 @@
+﻿<Window x:Class="UserWallPaper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:picker="clr-namespace:UserWallPaper"
+        xmlns:pdf="clr-namespace:UserWallPaper.CustomControl"
+        Title="Viewer" Height="1050" Width="1680" Closed="Window_Closed_1" ResizeMode="CanMinimize" WindowState="Maximized">
+    <Window.Resources>
+        <DoubleAnimation x:Key="MenuAnimation" Storyboard.TargetName="menu" Storyboard.TargetProperty="ListBox.Height" SpeedRatio="8">
+        </DoubleAnimation>
+        <DoubleAnimation x:Key="NoteAnimation" Storyboard.TargetName="Note" Storyboard.TargetProperty="Note.Width" SpeedRatio="4">
+        </DoubleAnimation>
+        <Storyboard x:Key="animate">
+            <ObjectAnimationUsingKeyFrames BeginTime="0:0:0" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Visible</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimation BeginTime="0:0:0.0" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.2"/>
+            <DoubleAnimation BeginTime="0:0:5.0" Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0.5"/>
+            <ObjectAnimationUsingKeyFrames BeginTime="0:0:5.5" Storyboard.TargetProperty="Visibility">
+                <DiscreteObjectKeyFrame KeyTime="0">
+                    <DiscreteObjectKeyFrame.Value>
+                        <Visibility>Hidden</Visibility>
+                    </DiscreteObjectKeyFrame.Value>
+                </DiscreteObjectKeyFrame>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Grid x:Name="maingrid" Background="LightYellow">
+        <Grid x:Name="menugrid" MouseEnter="Menu_MouseEnter_1" MouseLeave="Menu_MouseLeave_1" Background="Transparent" Height="45" VerticalAlignment="Top">
+            <ListBox x:Name="menu" Height="45" VerticalAlignment="Top" Margin="452,0">
+                <ListBox.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Width" Value="45"/>
+                        <Setter Property="Height" Value="45"/>
+                        <Setter Property="Margin" Value="0"/>
+                        <Setter Property="Cursor" Value="Hand" />
+
+                    </Style>
+                </ListBox.Resources>
+                <ListBox.Template>
+                    <ControlTemplate>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" IsItemsHost="True"/>
+                    </ControlTemplate>
+                </ListBox.Template>
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Focusable" Value="False"/>
+                        <Setter Property="VerticalAlignment" Value="Top"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+
+                <!-- ListBox Items -->
+
+                <!-- ListBox Items -->
+                <Image MouseDown="Button_Click_1" Source="Image/FileOpen.png"/>
+                <Image MouseDown="TimeList_Click" Source="Image/Time.png"/>
+                <Image x:Name="previous" MouseDown="previous_Click" Source="Image/Left.png" />
+                <Image x:Name="next" MouseDown="next_Click" Source="Image/Right.png" />
+                <TextBox x:Name="first" Margin="0,10,0,0" Height="23" TextWrapping="Wrap" Text="" Width="30" KeyDown="first_KeyDown" Background="Transparent"/>
+                <TextBox x:Name="last" Margin="0,10,0,0" Height="23" TextWrapping="Wrap" Text="" Width="30" IsReadOnly="True" IsEnabled="False"/>
+
+                <Image x:Name="minus" MouseDown="Button_Click_2" Source="Image/Minus.png"/>
+                <Image x:Name="plus" MouseDown="Button_Click_2" Source="Image/Plus.png"/>
+                <Image Source="Image/Arrow.png" MouseDown="DefaultCursor" />
+                <picker:PickerControl x:Name="picker" Width="45" Height="45" Source="Image/Pen.png"/>
+                <!--<Image x:Name="menupen" Source="Image/Pen.png" MouseDown="Pen_Click1"/>-->
+                <picker:ThickControl x:Name="menuthick" Width="45" Height="45" Source="Image/Pen_Thick.png"/>
+                <!--<Image x:Name="menuthick" Source="Image/Pen_Thick.png" MouseDown="PenThick_Click"/>-->
+                <picker:BrushControl x:Name="brushpicker" Width="45" Height="45" Source="Image/Color.png"/>
+                <Image Source="Image/Text.png" MouseDown="Text_click" />
+                <Image Source="Image/Erase.png" MouseDown="Erase_Click"/>
+                <picker:BookmarkControl x:Name="bookmark" Width="45" Height="45" Source="Image/BookMark.png"/>
+                <!--<Image Source="Image/BookMark.png"/>-->
+                <Image x:Name="menu_mode" Source="Image/Mode_Auto.png" MouseDown="Mode_Click"/>
+                <Image Source="Image/Pin.png" MouseDown="MenuPin_Click"/>
+                <!-- ListBox Items -->
+            </ListBox>
+            </Grid>
+        <Grid x:Name="grid" Margin="70,45,0,115" Width="1532" HorizontalAlignment="Left">
+
+            <ScrollViewer x:Name="pdfscroll" Background="LightYellow" Margin="0,27,10,0" PreviewMouseWheel="ScrollViewer_MouseWheel_1" ScrollChanged="ScrollViewer_ScrollChanged_1">
+                <pdf:MyInkCanvas x:Name="pdf" Background="Transparent" ResizeEnabled="True" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True" Height="711" Width="1050" PreviewMouseDown="pdf_MouseDown" PreviewMouseMove="pdf_MouseMove" PreviewMouseUp="pdf_PreviewMouseUp" UseCustomCursor="True">
+                    <pdf:MyInkCanvas.LayoutTransform>
+                        <ScaleTransform x:Name="st" ScaleX="0.7"
+                            ScaleY="0.7"/>
+                    </pdf:MyInkCanvas.LayoutTransform>
+                </pdf:MyInkCanvas>
+            </ScrollViewer>
+
+        </Grid>
+        <Grid x:Name="Note" Height="860" Margin="0,45,0,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="70" Background="#B290EE90">
+            <Image Source="Image/Note.png" MouseDown="NotePin_Click" Margin="0,0,0,800" HorizontalAlignment="Left" Width="36"/>
+            <TextBox x:Name="notepad" Visibility="Hidden" Height="795" TextWrapping="Wrap" Text="" VerticalAlignment="Top" AcceptsReturn="True" Margin="0,65,0,0"/>
+
+        </Grid>
+
+    </Grid>
+</Window>

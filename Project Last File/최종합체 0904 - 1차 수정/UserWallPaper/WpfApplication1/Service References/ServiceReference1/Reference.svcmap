@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c7257cce-a2ae-47a4-bdcb-41ebb35c2cfd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://61.81.99.75:9000/Getservice" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GetService.xsd" MetadataType="Schema" ID="807f5f7b-8436-4f46-9969-286f5e597485" SourceId="1" SourceUrl="http://61.81.99.75:9000/GetService?xsd=xsd4" />
+    <MetadataFile FileName="GetService1.xsd" MetadataType="Schema" ID="c4afd339-6f92-4eba-aef7-79bc8c4fc482" SourceId="1" SourceUrl="http://61.81.99.75:9000/GetService?xsd=xsd0" />
+    <MetadataFile FileName="GetService2.xsd" MetadataType="Schema" ID="51ee3ec2-0515-453d-8250-7a91ebdf9ae3" SourceId="1" SourceUrl="http://61.81.99.75:9000/GetService?xsd=xsd5" />
+    <MetadataFile FileName="GetService3.xsd" MetadataType="Schema" ID="8e63c283-d111-4aed-ae34-69a42cafa826" SourceId="1" SourceUrl="http://61.81.99.75:9000/GetService?xsd=xsd3" />
+    <MetadataFile FileName="SIUService.wsdl" MetadataType="Wsdl" ID="95c0caef-8a28-4d5f-9a06-0d0b606226c4" SourceId="1" SourceUrl="http://61.81.99.75:9000/GetService?wsdl" />
+    <MetadataFile FileName="GetService.disco" MetadataType="Disco" ID="bec601b1-39f1-4dcc-bdc9-f9aefebf5403" SourceId="1" SourceUrl="http://61.81.99.75:9000/GetService?disco" />
+    <MetadataFile FileName="GetService4.xsd" MetadataType="Schema" ID="f6643fde-aa8a-46ad-bd84-6cb24c4b8204" SourceId="1" SourceUrl="http://61.81.99.75:9000/GetService?xsd=xsd2" />
+    <MetadataFile FileName="GetService5.xsd" MetadataType="Schema" ID="2ef07087-3717-4bc6-8dfd-7ea3109af57b" SourceId="1" SourceUrl="http://61.81.99.75:9000/GetService?xsd=xsd6" />
+    <MetadataFile FileName="GetService6.xsd" MetadataType="Schema" ID="0c6db6e1-d5fb-4cb0-b124-6f0e4e24b365" SourceId="1" SourceUrl="http://61.81.99.75:9000/GetService?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,1177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SIUService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="NetTcpBinding_ISIU_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://61.81.99.75:9000/GetService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://61.81.99.75:9000/GetService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://61.81.99.75:9000/GetService?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://61.81.99.75:9000/GetService?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Windows.Media" />
+      <xsd:import schemaLocation="http://61.81.99.75:9000/GetService?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System.Windows" />
+      <xsd:import schemaLocation="http://61.81.99.75:9000/GetService?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/_0624Server" />
+      <xsd:import schemaLocation="http://61.81.99.75:9000/GetService?xsd=xsd6" namespace="http://schemas.microsoft.com/Message" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISIU_Join_InputMessage">
+    <wsdl:part name="parameters" element="tns:Join" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Join_OutputMessage">
+    <wsdl:part name="parameters" element="tns:JoinResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_MyType_InputMessage">
+    <wsdl:part name="parameters" element="tns:MyType" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_MyType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MyTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_MyName_InputMessage">
+    <wsdl:part name="parameters" element="tns:MyName" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_MyName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MyNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_MyBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:MyBook" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Say_InputMessage">
+    <wsdl:part name="parameters" element="tns:Say" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Save_InputMessage">
+    <wsdl:part name="parameters" element="tns:Save" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Save_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Find_InputMessage">
+    <wsdl:part name="parameters" element="tns:Find" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Find_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_FindName_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindName" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_FindName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_FindType_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindType" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_FindType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_FindUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_FindUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Rejoin_InputMessage">
+    <wsdl:part name="parameters" element="tns:Rejoin" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Rejoin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RejoinResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_FindtoID_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindtoID" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_FindtoID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindtoIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DrawPrepare_InputMessage">
+    <wsdl:part name="parameters" element="tns:DrawPrepare" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Draw_InputMessage">
+    <wsdl:part name="parameters" element="tns:Draw" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DrawEnd_InputMessage">
+    <wsdl:part name="parameters" element="tns:DrawEnd" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_MovePage_InputMessage">
+    <wsdl:part name="parameters" element="tns:MovePage" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Leave_InputMessage">
+    <wsdl:part name="parameters" element="tns:Leave" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Files_InputMessage">
+    <wsdl:part name="parameters" element="tns:Files" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Files_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_WriteSugesstSubmissionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteSugesstSubmissionList" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_WriteSugesstSubmissionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteSugesstSubmissionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadSugesstSubmissionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSugesstSubmissionList" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadSugesstSubmissionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSugesstSubmissionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DeleteSubmission_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSubmission" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DeleteSubmission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSubmissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_WriteSubmissionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteSubmissionList" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_WriteSubmissionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WriteSubmissionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadSubmissionList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSubmissionList" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadSubmissionList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSubmissionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DeleteSumitSubmission_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSumitSubmission" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DeleteSumitSubmission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSumitSubmissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_WritePersonalStudentSubmissionXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:WritePersonalStudentSubmissionXml" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_WritePersonalStudentSubmissionXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WritePersonalStudentSubmissionXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadPersonalStudentSubmissionXml_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadPersonalStudentSubmissionXml" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadPersonalStudentSubmissionXml_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadPersonalStudentSubmissionXmlResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DeletePersonalStudentInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePersonalStudentInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DeletePersonalStudentInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePersonalStudentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_BoardDeleteFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:BoardDeleteFile" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_BoardDeleteFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BoardDeleteFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadSubmissionBoardWrite_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSubmissionBoardWrite" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadSubmissionBoardWrite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSubmissionBoardWriteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadSubmissionBoardCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSubmissionBoardCheck" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadSubmissionBoardCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadSubmissionBoardCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DeleteFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFile" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DeleteFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_List_InputMessage">
+    <wsdl:part name="parameters" element="tns:List" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_List_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_GetUploadedXmlInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUploadedXmlInfo" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_GetUploadedXmlInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUploadedXmlInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_StudentBoardWrite_InputMessage">
+    <wsdl:part name="parameters" element="tns:StudentBoardWrite" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_StudentBoardWrite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StudentBoardWriteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_StudentBoardRead_InputMessage">
+    <wsdl:part name="parameters" element="tns:StudentBoardRead" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_StudentBoardRead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StudentBoardReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DeleteStudentBoard_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStudentBoard" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DeleteStudentBoard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStudentBoardResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadStudentBoardWrite_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStudentBoardWrite" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadStudentBoardWrite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStudentBoardWriteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadStudentBoardCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStudentBoardCheck" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReadStudentBoardCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadStudentBoardCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="FileUploadMessage">
+    <wsdl:part name="parameters" element="tns:FileUploadMessage" />
+  </wsdl:message>
+  <wsdl:message name="FileUploadMessage_Headers">
+    <wsdl:part name="Length" element="tns:Length" />
+    <wsdl:part name="VirtualPath" element="tns:VirtualPath" />
+    <wsdl:part name="pathflag" element="tns:pathflag" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_PutFile_OutputMessage" />
+  <wsdl:message name="ISIU_Memo_InputMessage">
+    <wsdl:part name="parameters" element="tns:Memo" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_MemoText_InputMessage">
+    <wsdl:part name="parameters" element="tns:MemoText" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Erase_InputMessage">
+    <wsdl:part name="parameters" element="tns:Erase" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_SendScroll_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendScroll" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_NoUSBWrite_InputMessage">
+    <wsdl:part name="parameters" element="tns:NoUSBWrite" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_NoUSBWrite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NoUSBWriteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_NoUSBRead_InputMessage">
+    <wsdl:part name="parameters" element="tns:NoUSBRead" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_NoUSBRead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NoUSBReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_SendRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendRequest" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Receive_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:Receive" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_UserEnter_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UserEnter" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Uploaded_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:Uploaded" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_Uploaded_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UploadedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_PrepareReceive_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:PrepareReceive" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DrawReceive_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:DrawReceive" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_DrawEndReceive_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:DrawEndReceive" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_UserLeave_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:UserLeave" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReceivePage_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ReceivePage" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_MemoReceive_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:MemoReceive" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_MemoTextReceive_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:MemoTextReceive" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_EraseReceive_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EraseReceive" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_ReceiveScroll_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveScroll" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_SendResponse_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SendResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISIU_SendResponse_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SendResponseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResponseFile">
+    <wsdl:part name="parameters" element="tns:ResponseFile" />
+  </wsdl:message>
+  <wsdl:message name="ResponseFile_Headers">
+    <wsdl:part name="FileName" element="tns:FileName" />
+    <wsdl:part name="Length" element="tns:Length" />
+    <wsdl:part name="byteStart" element="tns:byteStart" />
+    <wsdl:part name="pathflag" element="tns:pathflag" />
+  </wsdl:message>
+  <wsdl:message name="ITransfer_UploadFile_OutputMessage" />
+  <wsdl:message name="ITransfer_GetFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFile" />
+  </wsdl:message>
+  <wsdl:message name="ITransfer_GetFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestFile">
+    <wsdl:part name="parameters" element="tns:RequestFile" />
+  </wsdl:message>
+  <wsdl:message name="RequestFile_Headers">
+    <wsdl:part name="idx" element="tns:idx" />
+    <wsdl:part name="pathflag" element="tns:pathflag" />
+  </wsdl:message>
+  <wsdl:message name="ResponseMultiFile">
+    <wsdl:part name="parameters" element="tns:ResponseMultiFile" />
+  </wsdl:message>
+  <wsdl:message name="ResponseMultiFile_Headers">
+    <wsdl:part name="FileName" element="tns:FileName" />
+    <wsdl:part name="Length" element="tns:Length" />
+    <wsdl:part name="byteStart" element="tns:byteStart" />
+  </wsdl:message>
+  <wsdl:message name="RequestFiles">
+    <wsdl:part name="parameters" element="tns:RequestFiles" />
+  </wsdl:message>
+  <wsdl:message name="RequestFiles_Headers">
+    <wsdl:part name="FilePath" element="tns:FilePath" />
+    <wsdl:part name="idx" element="tns:idx" />
+    <wsdl:part name="pathflag" element="tns:pathflag" />
+  </wsdl:message>
+  <wsdl:message name="ITransfer_GetTotalSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalSize" />
+  </wsdl:message>
+  <wsdl:message name="ITransfer_GetTotalSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransfer_GetTotalFileSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalFileSize" />
+  </wsdl:message>
+  <wsdl:message name="ITransfer_GetTotalFileSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalFileSizeResponse" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="ISIU">
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Join">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/Join" message="tns:ISIU_Join_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/JoinResponse" message="tns:ISIU_Join_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="MyType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/MyType" message="tns:ISIU_MyType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/MyTypeResponse" message="tns:ISIU_MyType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="MyName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/MyName" message="tns:ISIU_MyName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/MyNameResponse" message="tns:ISIU_MyName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="MyBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/MyBook" message="tns:ISIU_MyBook_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="Say">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/Say" message="tns:ISIU_Say_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Save">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/Save" message="tns:ISIU_Save_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/SaveResponse" message="tns:ISIU_Save_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Find">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/Find" message="tns:ISIU_Find_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/FindResponse" message="tns:ISIU_Find_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="FindName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/FindName" message="tns:ISIU_FindName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/FindNameResponse" message="tns:ISIU_FindName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="FindType">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/FindType" message="tns:ISIU_FindType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/FindTypeResponse" message="tns:ISIU_FindType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="FindUserInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/FindUserInfo" message="tns:ISIU_FindUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/FindUserInfoResponse" message="tns:ISIU_FindUserInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Rejoin">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/Rejoin" message="tns:ISIU_Rejoin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/RejoinResponse" message="tns:ISIU_Rejoin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/Login" message="tns:ISIU_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/LoginResponse" message="tns:ISIU_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="FindtoID">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/FindtoID" message="tns:ISIU_FindtoID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/FindtoIDResponse" message="tns:ISIU_FindtoID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DrawPrepare">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/DrawPrepare" message="tns:ISIU_DrawPrepare_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Draw">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/Draw" message="tns:ISIU_Draw_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DrawEnd">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/DrawEnd" message="tns:ISIU_DrawEnd_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="MovePage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/MovePage" message="tns:ISIU_MovePage_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Leave">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/Leave" message="tns:ISIU_Leave_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Files">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/Files" message="tns:ISIU_Files_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/FilesResponse" message="tns:ISIU_Files_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="WriteSugesstSubmissionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/WriteSugesstSubmissionList" message="tns:ISIU_WriteSugesstSubmissionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/WriteSugesstSubmissionListResponse" message="tns:ISIU_WriteSugesstSubmissionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReadSugesstSubmissionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/ReadSugesstSubmissionList" message="tns:ISIU_ReadSugesstSubmissionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/ReadSugesstSubmissionListResponse" message="tns:ISIU_ReadSugesstSubmissionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteSubmission">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/DeleteSubmission" message="tns:ISIU_DeleteSubmission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/DeleteSubmissionResponse" message="tns:ISIU_DeleteSubmission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="WriteSubmissionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/WriteSubmissionList" message="tns:ISIU_WriteSubmissionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/WriteSubmissionListResponse" message="tns:ISIU_WriteSubmissionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReadSubmissionList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/ReadSubmissionList" message="tns:ISIU_ReadSubmissionList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/ReadSubmissionListResponse" message="tns:ISIU_ReadSubmissionList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteSumitSubmission">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/DeleteSumitSubmission" message="tns:ISIU_DeleteSumitSubmission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/DeleteSumitSubmissionResponse" message="tns:ISIU_DeleteSumitSubmission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="WritePersonalStudentSubmissionXml">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/WritePersonalStudentSubmissionXml" message="tns:ISIU_WritePersonalStudentSubmissionXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/WritePersonalStudentSubmissionXmlResponse" message="tns:ISIU_WritePersonalStudentSubmissionXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReadPersonalStudentSubmissionXml">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/ReadPersonalStudentSubmissionXml" message="tns:ISIU_ReadPersonalStudentSubmissionXml_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/ReadPersonalStudentSubmissionXmlResponse" message="tns:ISIU_ReadPersonalStudentSubmissionXml_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeletePersonalStudentInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/DeletePersonalStudentInfo" message="tns:ISIU_DeletePersonalStudentInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/DeletePersonalStudentInfoResponse" message="tns:ISIU_DeletePersonalStudentInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="BoardDeleteFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/BoardDeleteFile" message="tns:ISIU_BoardDeleteFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/BoardDeleteFileResponse" message="tns:ISIU_BoardDeleteFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReadSubmissionBoardWrite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/ReadSubmissionBoardWrite" message="tns:ISIU_ReadSubmissionBoardWrite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/ReadSubmissionBoardWriteResponse" message="tns:ISIU_ReadSubmissionBoardWrite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReadSubmissionBoardCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/ReadSubmissionBoardCheck" message="tns:ISIU_ReadSubmissionBoardCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/ReadSubmissionBoardCheckResponse" message="tns:ISIU_ReadSubmissionBoardCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/DeleteFile" message="tns:ISIU_DeleteFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/DeleteFileResponse" message="tns:ISIU_DeleteFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="List">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/List" message="tns:ISIU_List_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/ListResponse" message="tns:ISIU_List_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="GetUploadedXmlInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/GetUploadedXmlInfo" message="tns:ISIU_GetUploadedXmlInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/GetUploadedXmlInfoResponse" message="tns:ISIU_GetUploadedXmlInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="StudentBoardWrite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/StudentBoardWrite" message="tns:ISIU_StudentBoardWrite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/StudentBoardWriteResponse" message="tns:ISIU_StudentBoardWrite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="StudentBoardRead">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/StudentBoardRead" message="tns:ISIU_StudentBoardRead_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/StudentBoardReadResponse" message="tns:ISIU_StudentBoardRead_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DeleteStudentBoard">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/DeleteStudentBoard" message="tns:ISIU_DeleteStudentBoard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/DeleteStudentBoardResponse" message="tns:ISIU_DeleteStudentBoard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReadStudentBoardWrite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/ReadStudentBoardWrite" message="tns:ISIU_ReadStudentBoardWrite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/ReadStudentBoardWriteResponse" message="tns:ISIU_ReadStudentBoardWrite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReadStudentBoardCheck">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/ReadStudentBoardCheck" message="tns:ISIU_ReadStudentBoardCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/ReadStudentBoardCheckResponse" message="tns:ISIU_ReadStudentBoardCheck_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PutFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/PutFile" name="FileUploadMessage" message="tns:FileUploadMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/PutFileResponse" message="tns:ISIU_PutFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Memo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/Memo" message="tns:ISIU_Memo_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="MemoText">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/MemoText" message="tns:ISIU_MemoText_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Erase">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/Erase" message="tns:ISIU_Erase_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SendScroll">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/SendScroll" message="tns:ISIU_SendScroll_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NoUSBWrite">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/NoUSBWrite" message="tns:ISIU_NoUSBWrite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/NoUSBWriteResponse" message="tns:ISIU_NoUSBWrite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="NoUSBRead">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/NoUSBRead" message="tns:ISIU_NoUSBRead_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/NoUSBReadResponse" message="tns:ISIU_NoUSBRead_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SendRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/SendRequest" message="tns:ISIU_SendRequest_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Receive">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/Receive" message="tns:ISIU_Receive_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UserEnter">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/UserEnter" message="tns:ISIU_UserEnter_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Uploaded">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/Uploaded" message="tns:ISIU_Uploaded_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/UploadedResponse" message="tns:ISIU_Uploaded_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="PrepareReceive">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/PrepareReceive" message="tns:ISIU_PrepareReceive_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DrawReceive">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/DrawReceive" message="tns:ISIU_DrawReceive_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="DrawEndReceive">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/DrawEndReceive" message="tns:ISIU_DrawEndReceive_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="UserLeave">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/UserLeave" message="tns:ISIU_UserLeave_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReceivePage">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/ReceivePage" message="tns:ISIU_ReceivePage_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="MemoReceive">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/MemoReceive" message="tns:ISIU_MemoReceive_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="MemoTextReceive">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/MemoTextReceive" message="tns:ISIU_MemoTextReceive_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="EraseReceive">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/EraseReceive" message="tns:ISIU_EraseReceive_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ReceiveScroll">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/ReceiveScroll" message="tns:ISIU_ReceiveScroll_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="SendResponse">
+      <wsdl:output wsaw:Action="http://tempuri.org/ISIU/SendResponse" message="tns:ISIU_SendResponse_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/ISIU/SendResponseResponse" message="tns:ISIU_SendResponse_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ITransfer">
+    <wsdl:operation name="UploadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransfer/UploadFile" name="ResponseFile" message="tns:ResponseFile" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransfer/UploadFileResponse" message="tns:ITransfer_UploadFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransfer/GetFile" message="tns:ITransfer_GetFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransfer/GetFileResponse" message="tns:ITransfer_GetFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransfer/DownloadFile" name="RequestFile" message="tns:RequestFile" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransfer/DownloadFileResponse" name="ResponseMultiFile" message="tns:ResponseMultiFile" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransfer/DownloadFiles" name="RequestFiles" message="tns:RequestFiles" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransfer/DownloadFilesResponse" name="ResponseMultiFile" message="tns:ResponseMultiFile" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransfer/GetTotalSize" message="tns:ITransfer_GetTotalSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransfer/GetTotalSizeResponse" message="tns:ITransfer_GetTotalSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalFileSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITransfer/GetTotalFileSize" message="tns:ITransfer_GetTotalFileSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITransfer/GetTotalFileSizeResponse" message="tns:ITransfer_GetTotalFileSize_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NetTcpBinding_ISIU" type="tns:ISIU">
+    <wsp:PolicyReference URI="#NetTcpBinding_ISIU_policy" />
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="Join">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/Join" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MyType">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/MyType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MyName">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/MyName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MyBook">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/MyBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Say">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/Say" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Save">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/Save" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Find">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/Find" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindName">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/FindName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindType">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/FindType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/FindUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Rejoin">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/Rejoin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindtoID">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/FindtoID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DrawPrepare">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/DrawPrepare" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Draw">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/Draw" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="DrawEnd">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/DrawEnd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="MovePage">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/MovePage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Leave">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/Leave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Files">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/Files" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteSugesstSubmissionList">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/WriteSugesstSubmissionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSugesstSubmissionList">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/ReadSugesstSubmissionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSubmission">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/DeleteSubmission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteSubmissionList">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/WriteSubmissionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSubmissionList">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/ReadSubmissionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSumitSubmission">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/DeleteSumitSubmission" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WritePersonalStudentSubmissionXml">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/WritePersonalStudentSubmissionXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadPersonalStudentSubmissionXml">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/ReadPersonalStudentSubmissionXml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePersonalStudentInfo">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/DeletePersonalStudentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BoardDeleteFile">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/BoardDeleteFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSubmissionBoardWrite">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/ReadSubmissionBoardWrite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadSubmissionBoardCheck">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/ReadSubmissionBoardCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/DeleteFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="List">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/List" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUploadedXmlInfo">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/GetUploadedXmlInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentBoardWrite">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/StudentBoardWrite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentBoardRead">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/StudentBoardRead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStudentBoard">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/DeleteStudentBoard" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadStudentBoardWrite">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/ReadStudentBoardWrite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadStudentBoardCheck">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/ReadStudentBoardCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PutFile">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/PutFile" style="document" />
+      <wsdl:input name="FileUploadMessage">
+        <soap12:header message="tns:FileUploadMessage_Headers" part="Length" use="literal" />
+        <soap12:header message="tns:FileUploadMessage_Headers" part="VirtualPath" use="literal" />
+        <soap12:header message="tns:FileUploadMessage_Headers" part="pathflag" use="literal" />
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Memo">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/Memo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="MemoText">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/MemoText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Erase">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/Erase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="SendScroll">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/SendScroll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="NoUSBWrite">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/NoUSBWrite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoUSBRead">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/NoUSBRead" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendRequest">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/SendRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="Receive">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/Receive" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserEnter">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/UserEnter" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Uploaded">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/Uploaded" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrepareReceive">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/PrepareReceive" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DrawReceive">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/DrawReceive" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DrawEndReceive">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/DrawEndReceive" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserLeave">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/UserLeave" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceivePage">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/ReceivePage" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemoReceive">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/MemoReceive" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemoTextReceive">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/MemoTextReceive" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EraseReceive">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/EraseReceive" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveScroll">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/ReceiveScroll" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendResponse">
+      <soap12:operation soapAction="http://tempuri.org/ISIU/SendResponse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ITransfer" type="tns:ITransfer">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadFile">
+      <soap:operation soapAction="http://tempuri.org/ITransfer/UploadFile" style="document" />
+      <wsdl:input name="ResponseFile">
+        <soap:header message="tns:ResponseFile_Headers" part="FileName" use="literal" />
+        <soap:header message="tns:ResponseFile_Headers" part="Length" use="literal" />
+        <soap:header message="tns:ResponseFile_Headers" part="byteStart" use="literal" />
+        <soap:header message="tns:ResponseFile_Headers" part="pathflag" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFile">
+      <soap:operation soapAction="http://tempuri.org/ITransfer/GetFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFile">
+      <soap:operation soapAction="http://tempuri.org/ITransfer/DownloadFile" style="document" />
+      <wsdl:input name="RequestFile">
+        <soap:header message="tns:RequestFile_Headers" part="idx" use="literal" />
+        <soap:header message="tns:RequestFile_Headers" part="pathflag" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ResponseMultiFile">
+        <soap:header message="tns:ResponseMultiFile_Headers" part="FileName" use="literal" />
+        <soap:header message="tns:ResponseMultiFile_Headers" part="Length" use="literal" />
+        <soap:header message="tns:ResponseMultiFile_Headers" part="byteStart" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadFiles">
+      <soap:operation soapAction="http://tempuri.org/ITransfer/DownloadFiles" style="document" />
+      <wsdl:input name="RequestFiles">
+        <soap:header message="tns:RequestFiles_Headers" part="FilePath" use="literal" />
+        <soap:header message="tns:RequestFiles_Headers" part="idx" use="literal" />
+        <soap:header message="tns:RequestFiles_Headers" part="pathflag" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ResponseMultiFile">
+        <soap:header message="tns:ResponseMultiFile_Headers" part="FileName" use="literal" />
+        <soap:header message="tns:ResponseMultiFile_Headers" part="Length" use="literal" />
+        <soap:header message="tns:ResponseMultiFile_Headers" part="byteStart" use="literal" />
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalSize">
+      <soap:operation soapAction="http://tempuri.org/ITransfer/GetTotalSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalFileSize">
+      <soap:operation soapAction="http://tempuri.org/ITransfer/GetTotalFileSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SIUService">
+    <wsdl:port name="NetTcpBinding_ISIU" binding="tns:NetTcpBinding_ISIU">
+      <soap12:address location="net.tcp://61.81.99.75:7878/Chating" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://61.81.99.75:7878/Chating</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ITransfer" binding="tns:BasicHttpBinding_ITransfer">
+      <soap:address location="http://61.81.99.75:9000/GetService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

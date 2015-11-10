@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B572926-1CE5-4D8F-8863-E1F54106E9D4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UserWallPaper</RootNamespace>
+    <AssemblyName>UserWallPaper</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>HP-Finder.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentConverter, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DocumentConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="FileServer.Services, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\FileServer.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.IWshRuntimeLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.IWshRuntimeLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Kent.Boogaart.Windows.Controls, Version=1.0.4979.18827, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Kent.Boogaart.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.WindowsAPICodePack">
+      <HintPath>..\..\..\정우창 공유파일 바로가기\프로젝트 합체 5단계 - 4\UserWallPaper3\WpfApplication1\bin\Debug\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell">
+      <HintPath>..\..\..\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="PDFLibNet, Version=1.0.6.1, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\PDFLibNet.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=1.0.898.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="RubberBand, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Behavior\RubberBand\bin\Debug\RubberBand.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFSpark">
+      <HintPath>WPFSpark\bin\Debug\WPFSpark.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Board\FileRoom.xaml.cs">
+      <DependentUpon>FileRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Board\StudentBoard.xaml.cs">
+      <DependentUpon>StudentBoard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Board\StudentBoardConnet.xaml.cs">
+      <DependentUpon>StudentBoardConnet.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Board\SubmissionConnect.xaml.cs">
+      <DependentUpon>SubmissionConnect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Board\SubmissionMain.xaml.cs">
+      <DependentUpon>SubmissionMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConverterServices.cs" />
+    <Compile Include="EventWait.cs" />
+    <Compile Include="Progress\MultiProgressBar.xaml.cs">
+      <DependentUpon>MultiProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Progress\CopyEventArgs.cs" />
+    <Compile Include="Progress\CopyFileExWrapper.cs" />
+    <Compile Include="CustomControl\CustomSpc.cs" />
+    <Compile Include="CustomControl\MyInkCanvas.cs" />
+    <Compile Include="Progress\DirectoyProgress.xaml.cs">
+      <DependentUpon>DirectoyProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DpiHelper.cs" />
+    <Compile Include="GetlnkPath.cs" />
+    <Compile Include="GetUsbPath.cs" />
+    <Compile Include="IconOnCanvas.xaml.cs">
+      <DependentUpon>IconOnCanvas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyAnimation.cs" />
+    <Compile Include="NoUSBWindowFolder.xaml.cs">
+      <DependentUpon>NoUSBWindowFolder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NoUSBWindowsStyle.xaml.cs">
+      <DependentUpon>NoUSBWindowsStyle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PopupChildEnable.cs" />
+    <Compile Include="Progress\ProgressBar.xaml.cs">
+      <DependentUpon>ProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service.cs" />
+    <Compile Include="TimeList\Setting.xaml.cs">
+      <DependentUpon>Setting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TimeList\TimeWindow.xaml.cs">
+      <DependentUpon>TimeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Progress\UploadProgress.cs" />
+    <Compile Include="USB_Join.xaml.cs">
+      <DependentUpon>USB_Join.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="USB_Login.xaml.cs">
+      <DependentUpon>USB_Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="USB_Member.xaml.cs">
+      <DependentUpon>USB_Member.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="USB_Rejoin.xaml.cs">
+      <DependentUpon>USB_Rejoin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\BookmarkControl.xaml.cs">
+      <DependentUpon>BookmarkControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\BrushControl.xaml.cs">
+      <DependentUpon>BrushControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\PickerControl.xaml.cs">
+      <DependentUpon>PickerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TextControl.xaml.cs">
+      <DependentUpon>TextControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ThickControl.xaml.cs">
+      <DependentUpon>ThickControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserLinkListXML.cs" />
+    <Compile Include="UserSetUtil.xaml.cs">
+      <DependentUpon>UserSetUtil.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowMaximize.cs" />
+    <Compile Include="WindowsXml.cs" />
+    <Compile Include="Xml\BookmarkXml.cs" />
+    <Compile Include="Xml\DownloadedXml.cs" />
+    <Compile Include="Xml\DrawXml.cs" />
+    <Compile Include="Xml\NoteXml.cs" />
+    <Compile Include="Xml\TimeXml.cs" />
+    <Page Include="Board\FileRoom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Board\StudentBoard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Board\StudentBoardConnet.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Board\SubmissionConnect.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Board\SubmissionMain.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Progress\MultiProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Progress\DirectoyProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="IconOnCanvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NoUSBWindowFolder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NoUSBWindowsStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Progress\ProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TimeList\Setting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TimeList\TimeWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="USB_Join.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="USB_Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="USB_Member.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="USB_Rejoin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl\BookmarkControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\BrushControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\PickerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\TextControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControl\ThickControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserSetUtil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowsStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WindowsStyle.xaml.cs">
+      <DependentUpon>WindowsStyle.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="PNG\Thumbs.db" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\ServiceReference1\GetService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\GetService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\GetService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\GetService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\GetService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\GetService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\GetService6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\SIUService.wsdl" />
+    <None Include="Service References\ServiceReference1\UserWallPaper.ServiceReference1.PutFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\UserWallPaper.ServiceReference1.ResponseMultiFile.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\UserWallPaper.ServiceReference1.StorageFileInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\UserWallPaper.ServiceReference1.UploadFileResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="아이콘\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\BookRoom.png" />
+    <Resource Include="ImageFolder\ChangeWindow.png" />
+    <Resource Include="ImageFolder\default.png" />
+    <Resource Include="ImageFolder\End.png" />
+    <Resource Include="ImageFolder\FileRoom.png" />
+    <Resource Include="ImageFolder\Helper.png" />
+    <Resource Include="ImageFolder\MyComputer.png" />
+    <Resource Include="ImageFolder\MyFolder.png" />
+    <Resource Include="ImageFolder\SubMission.png" />
+    <Resource Include="ImageFolder\TrashCan.png" />
+    <Resource Include="ImageFolder\User.png" />
+    <Resource Include="ImageFolder\UserFolder.png" />
+    <Resource Include="ImageFolder\Viewer.png" />
+    <Resource Include="ImageFolder\wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\StudentBoard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\CloseButton.png" />
+    <Resource Include="ImageFolder\MinimizeButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\file-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Arrow.png" />
+    <Resource Include="Image\BookMark.png" />
+    <Resource Include="Image\BookMarks.addto.png" />
+    <Resource Include="Image\BookMarks.png" />
+    <Resource Include="Image\Color.png" />
+    <Resource Include="Image\Color_PIcker.png" />
+    <Resource Include="Image\FileOpen.png" />
+    <Resource Include="Image\Left.png" />
+    <Resource Include="Image\Minus.png" />
+    <Resource Include="Image\Mode.png" />
+    <Resource Include="Image\Mode_Auto.png" />
+    <Resource Include="Image\Mode_Manual.png" />
+    <Resource Include="Image\Note.png" />
+    <Resource Include="Image\Pen.png" />
+    <Resource Include="Image\Pen_Thick.png" />
+    <Resource Include="Image\Pin.png" />
+    <Resource Include="Image\Plus.png" />
+    <Resource Include="Image\Right.png" />
+    <Resource Include="Image\Save.png" />
+    <Resource Include="Image\Text.png" />
+    <Resource Include="Image\Time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\Erase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PNG\1.png" />
+    <Resource Include="PNG\10.png" />
+    <Resource Include="PNG\11.png" />
+    <Resource Include="PNG\12.png" />
+    <Resource Include="PNG\13.png" />
+    <Resource Include="PNG\14.png" />
+    <Resource Include="PNG\15.png" />
+    <Resource Include="PNG\16.png" />
+    <Resource Include="PNG\2.png" />
+    <Resource Include="PNG\3.png" />
+    <Resource Include="PNG\4.png" />
+    <Resource Include="PNG\5.png" />
+    <Resource Include="PNG\6.png" />
+    <Resource Include="PNG\7.png" />
+    <Resource Include="PNG\8.png" />
+    <Resource Include="PNG\9.png" />
+    <Resource Include="PNG\HP-Flash-Drive.ico" />
+    <Resource Include="아이콘\HP-Blank-Folder.ico" />
+    <Resource Include="아이콘\HP-CCleaner.ico" />
+    <Resource Include="아이콘\HP-Control.ico" />
+    <Resource Include="아이콘\HP-Documents-Folder.ico" />
+    <Resource Include="아이콘\HP-Explorer.ico" />
+    <Resource Include="아이콘\HP-Finder.ico" />
+    <Resource Include="아이콘\HP-Flash-Drive.ico" />
+    <Resource Include="아이콘\HP-Folder.ico" />
+    <Resource Include="아이콘\HP-FolderDocuments.ico" />
+    <Resource Include="아이콘\HP-FolderGrey.ico" />
+    <Resource Include="아이콘\HP-FolderMusic.ico" />
+    <Resource Include="아이콘\HP-FolderNetwork.ico" />
+    <Resource Include="아이콘\HP-GarageBand.ico" />
+    <Resource Include="아이콘\HP-HardDrive.ico" />
+    <Resource Include="아이콘\HP-HDD-ClearCase.ico" />
+    <Resource Include="아이콘\HP-HDD.ico" />
+    <Resource Include="아이콘\HP-Headphones.ico" />
+    <Resource Include="아이콘\HP-iMac.ico" />
+    <Resource Include="아이콘\HP-Ipod.ico" />
+    <Resource Include="아이콘\HP-iTunes.ico" />
+    <Resource Include="아이콘\HP-Keyboard.ico" />
+    <Resource Include="아이콘\HP-Laptop.ico" />
+    <Resource Include="아이콘\HP-MacPro.ico" />
+    <Resource Include="아이콘\HP-MediaPlayer.ico" />
+    <Resource Include="아이콘\HP-Mobile.ico" />
+    <Resource Include="아이콘\HP-Monitor-2.ico" />
+    <Resource Include="아이콘\HP-Monitor.ico" />
+    <Resource Include="아이콘\HP-Mouse.ico" />
+    <Resource Include="아이콘\HP-MSN.ico" />
+    <Resource Include="아이콘\HP-Music-Folder.ico" />
+    <Resource Include="아이콘\HP-MyComputer.ico" />
+    <Resource Include="아이콘\HP-Network.ico" />
+    <Resource Include="아이콘\HP-Opera.ico" />
+    <Resource Include="아이콘\HP-Pictures-Folder.ico" />
+    <Resource Include="아이콘\HP-Printer.ico" />
+    <Resource Include="아이콘\HP-Projector.ico" />
+    <Resource Include="아이콘\HP-Quicktime.ico" />
+    <Resource Include="아이콘\HP-Recycle-Empty.ico" />
+    <Resource Include="아이콘\HP-Recycle-Full.ico" />
+    <Resource Include="아이콘\HP-Samsung-Monitor.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\Book.png" />
+    <Resource Include="ImageFolder\Student.png" />
+    <Resource Include="ImageFolder\SubFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\SubMissionCheck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ImageFolder\Sumit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="HP-Finder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\GetService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

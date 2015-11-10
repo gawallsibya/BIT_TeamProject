@@ -1,0 +1,123 @@
+﻿<Window x:Class="UserWallPaper.StudentBoard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen" Width="1280" Height="800">
+
+    <Window.Resources>
+        <Style x:Key="Label" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                            BorderThickness="1"
+                            Padding="4,2"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="LightGray" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+                            BorderThickness="1"
+                            Padding="4,2" 
+                            BorderBrush="Gray"
+                            Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="LightGray" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="SeaGreen">
+        <Rectangle Fill="#FF2E2E2E" RadiusY="0" RadiusX="0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="1280" MouseLeftButtonDown="Window_Move" >
+            <Rectangle.OpacityMask>
+                <LinearGradientBrush StartPoint="1,1" EndPoint="1,1">
+                    <GradientStop Offset="0.5" Color="Black"/>
+                    <GradientStop Offset="1" Color="Transparent"/>
+                </LinearGradientBrush>
+            </Rectangle.OpacityMask>
+        </Rectangle>
+
+        <Grid HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="1266" Margin="7,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="90"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Content="학생 게시판" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" MouseLeftButtonDown="Window_Move" Margin="540,0"/>
+
+            <Image HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="19" Margin="24,4,0,0" Grid.Column="1" Source="../ImageFolder/MinimizeButton.png"/>
+            <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Width="21" Margin="23,3,0,0" Height="19" Grid.Column="1" Click="ThisMinimize"
+                     Foreground="Transparent" Background="Transparent" />
+
+            <Image HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="43" Margin="48,4,-1,0" Grid.Column="1" Source="../ImageFolder/CloseButton.png"/>
+            <Button  HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Margin="47,3,0,0" Height="20" Grid.Column="1" Click="ThisClose" 
+                     Foreground="Transparent" Background="Transparent"/>
+        </Grid>
+
+        <Grid Background="White" Margin="5,30,5,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="180" Margin="10,10,0,0">
+                <Label Content="학생 게시판" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,0,0,0" Height="30" FontSize="15"/>
+                <Image HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="30" Source="../ImageFolder/Student.png"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="180" Height="30" Foreground="Transparent" Background="Transparent" Style="{StaticResource Label}" 
+                        Click="StudentBoard_Click"/>
+            </Grid>
+
+            <Rectangle HorizontalAlignment="Left" Height="765" RadiusY="0" RadiusX="0" VerticalAlignment="Top" Width="1" Grid.Column="1" Stroke="LightGray"/>
+
+            <Grid Grid.Column="1">
+                <ListView x:Name="boardlist" ItemsSource="{Binding}" HorizontalAlignment="Left" Height="675" VerticalAlignment="Top" Width="1050" 
+                          Margin="10,37,0,0" BorderBrush="#FFD1D1D1" Background="{x:Null}" SelectionChanged="SelectList_Click">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding Number}" Width="80">번호</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Name}" Width="150">게시자</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Title}" Width="585">제목</GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Date}" Width="200">작성 날짜</GridViewColumn>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button Content="검색" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="985,728,0,0" Click="Search_Click" Background="Transparent" IsDefault="True"/>
+                <TextBox Name="searchname" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Margin="765,728,0,0"/>
+
+                <Button Content="&gt;&gt;" VerticalAlignment="Center" Width="25" Height="22" Margin="551,726,494,17" Padding="1" Background="Transparent" Click="Page_Change"/>
+                <Button Content="&gt;" VerticalAlignment="Center" Width="25" Margin="521,726,524,17" Height="22" Padding="1" Background="Transparent" Click="Page_Change"/>
+                <Button Content="&lt;" VerticalAlignment="Center" Width="25" Margin="469,726,576,17" Height="22" Padding="1" Background="Transparent" Click="Page_Change"/>
+                <Button Content="&lt;&lt;" VerticalAlignment="Center" Width="25" Margin="439,726,606,17" Height="22" Padding="1" Background="Transparent" Click="Page_Change"/>
+                <Label Name="pageNumber" Height="22" Content="1" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="1" Margin="503,726,559,17"/>
+            </Grid>
+        </Grid>
+        <CheckBox x:Name="readcheck" Content="안읽은 게시글 보기" HorizontalAlignment="Left" VerticalAlignment="Top" 
+        	Checked="readcheck_Checked" Unchecked="readcheck_Unchecked" Margin="215,38,0,0"/>
+        <Button Content="글 쓰 기" HorizontalAlignment="Left" VerticalAlignment="Top" Width="96" Margin="1169,38,0,0" Background="SkyBlue" Click="Write_Board" />
+        <Label Content="게시자 찾기" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="893,754,0,0"/>
+    </Grid>
+</Window>

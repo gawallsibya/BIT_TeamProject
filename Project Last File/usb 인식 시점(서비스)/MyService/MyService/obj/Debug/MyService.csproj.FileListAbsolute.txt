@@ -1,0 +1,16 @@
+E:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\bin\Debug\MyService.exe.config
+E:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\bin\Debug\MyService.exe
+E:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\bin\Debug\MyService.pdb
+E:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\obj\Debug\MyService.csprojResolveAssemblyReference.cache
+E:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\obj\Debug\MyService.ProjectInstaller.resources
+E:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\obj\Debug\MyService.csproj.GenerateResource.Cache
+E:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\obj\Debug\MyService.exe
+E:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\obj\Debug\MyService.pdb
+G:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\bin\Debug\MyService.exe.config
+G:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\obj\Debug\MyService.exe
+G:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\obj\Debug\MyService.pdb
+G:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\bin\Debug\MyService.exe
+G:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\bin\Debug\MyService.pdb
+G:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\obj\Debug\MyService.csprojResolveAssemblyReference.cache
+G:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\obj\Debug\MyService.ProjectInstaller.resources
+G:\저장공간\___프로그래밍___\프로젝트 관련 자료\프로젝트\Project Last File\usb 인식 시점(서비스)\MyService\MyService\obj\Debug\MyService.csproj.GenerateResource.Cache

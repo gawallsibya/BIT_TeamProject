@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UserControl x:Class="UserWallPaper.IconOnCanvas"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UserWallPaper"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+
+    <Grid>
+        <StackPanel Margin="5,5,5,5">
+
+            <CheckBox  VerticalAlignment="Center"  Margin="15,0,0,0" IsChecked="{Binding RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}, 
+                        Path=IsSelected,Mode=TwoWay}" Visibility="{Binding return_checkbox_visibility}"/>
+            <Grid>
+                <Image x:Name="IconImage" Width="40" Height="40"  HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5,5,5,5" Source="ImageFolder/file-icon.png" Opacity="0.7"/>
+                <TextBlock Name="Icontxtblock" Text="test" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="AR JULIAN" Foreground="White" Height="20" Margin="21,17,20,13" Width="42" TextAlignment="Center" Background="#FFFFBB59" FontSize="16" />
+            </Grid>
+            <TextBlock x:Name="IconTextBox" Width="82" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="12" Padding="0" Background="Transparent" 
+                       TextWrapping="Wrap" TextAlignment="Center"/>
+        </StackPanel>
+
+        <Grid.ToolTip>
+            <ToolTip>
+                <StackPanel>
+                    <TextBlock><Run x:Name="FileName"/></TextBlock>
+                    <TextBlock><Run x:Name="Size"/></TextBlock>
+                    <TextBlock><Run x:Name="Date"/></TextBlock>
+                </StackPanel>
+            </ToolTip>
+        </Grid.ToolTip>
+    </Grid>
+</UserControl>
